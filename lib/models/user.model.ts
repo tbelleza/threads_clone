@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { boolean } from "zod";
 
 const userSchema = new mongoose.Schema({
   id: { type: String, required: true },
@@ -13,7 +12,10 @@ const userSchema = new mongoose.Schema({
       ref: 'Thread'
     }
   ],
-  oboarded: { type: boolean, default: false },
+  onboarded: {
+    type: Boolean,
+    default: false
+  },
   communities: [
     {
       type: mongoose.Schema.Types.ObjectId,
